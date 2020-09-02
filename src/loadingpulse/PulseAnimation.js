@@ -2,8 +2,8 @@
 console.disableYellowBox = true;
 import React, {useState, useEffect} from 'react';
 import styled from 'styled-components/native';
-import {StyleSheet, Animated, Easing, Text} from 'react-native';
-import {Container} from './Containers';
+import {StyleSheet, Animated, Easing} from 'react-native';
+import {Container} from '../Containers';
 
 const CircleWrapper = styled.View`
   justify-content: center;
@@ -35,8 +35,14 @@ export const Pulse = ({interval, size = 110, pulseMaxSize = 250}) => {
       <PulseAnimatedView
         style={[
           {
-            width: anim.interpolate({inputRange: [0, 1], outputRange: [size, pulseMaxSize]}),
-            height: anim.interpolate({inputRange: [0, 1], outputRange: [size, pulseMaxSize]}),
+            width: anim.interpolate({
+              inputRange: [0, 1],
+              outputRange: [size, pulseMaxSize],
+            }),
+            height: anim.interpolate({
+              inputRange: [0, 1],
+              outputRange: [size, pulseMaxSize],
+            }),
             borderRadius: pulseMaxSize / 2,
             opacity: anim.interpolate({inputRange: [0, 1], outputRange: [1, 0]}),
           },
@@ -51,7 +57,10 @@ export const PulseAnimation = ({intervalTime = 1000}) => {
 
   useEffect(() => {
     setCircles((circles) => [...circles, 1]);
-    const interval = setInterval(() => setCircles((circles) => [...circles, 1]), intervalTime);
+    const interval = setInterval(
+      () => setCircles((circles) => [...circles, 1]),
+      intervalTime,
+    );
     return () => clearInterval(interval);
   }, [intervalTime]);
 

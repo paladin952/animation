@@ -1,7 +1,8 @@
 import React from 'react';
 import {SafeAreaView, StatusBar, ScrollView} from 'react-native';
-import {PulseAnimation} from './src/loadingpulse/PulseAnimation';
-import {HeartPulseAnimation} from './src/heartpulse/HeartPulse';
+import {PulseAnimation} from './src/loading-pulse/PulseAnimation';
+import {HeartPulseAnimation} from './src/heart-pulse/HeartPulse';
+import {LoadingAirplane} from './src/loading-airplane/LoadingAirplane';
 import {NavigationContainer, useNavigation} from '@react-navigation/native';
 import {createStackNavigator} from '@react-navigation/stack';
 import styled from 'styled-components/native';
@@ -42,6 +43,7 @@ const Menu = () => {
     <ScrollView>
       {renderRow('Heart Pulse', () => navigation.navigate('Heart Pulse'))}
       {renderRow('Loading Pulse', () => navigation.navigate('Loading Pulse'))}
+      {renderRow('Loading Airplane', () => navigation.navigate('Loading Airplane'))}
     </ScrollView>
   );
 };
@@ -55,6 +57,7 @@ const App = () => {
         <Stack.Screen name="Menu" component={Menu} />
         <Stack.Screen name="Heart Pulse" component={HeartPulseAnimation} />
         <Stack.Screen name="Loading Pulse" component={PulseAnimation} />
+        <Stack.Screen name="Loading Airplane" component={LoadingAirplane} />
       </Stack.Navigator>
     </NavigationContainer>
   );

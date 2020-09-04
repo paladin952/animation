@@ -71,6 +71,22 @@ const timingOptions = {
   easing: Easing.linear,
 };
 
+const getRandomRotationPosition = () => {
+  const rotationNumber = random(1, 3);
+  return rotationNumber === 1 ? '0deg' : rotationNumber === 2 ? '90deg' : '-90deg';
+};
+
+const generatePositions = () => {
+  const nrAirplanes = random(MIN_AIRPLANES, MAX_AIRPLANES);
+  return [...Array(nrAirplanes)].map((_, i) => {
+    return {
+      x: random(MIN_AIRPLANE_POSITION, MAX_AIRPLANE_POSITION),
+      y: random(MIN_AIRPLANE_POSITION, MAX_AIRPLANE_POSITION),
+      rotate: getRandomRotationPosition(),
+    };
+  });
+};
+
 export const RadarAnimation = () => {
   const [positions, setPositions] = useState([]);
   const fadeOut = useFadeOut(INTERVAL, INTERVAL);
@@ -94,20 +110,6 @@ export const RadarAnimation = () => {
         </LineAnimated>
       </LineContainer>
     );
-  };
-
-  const generatePositions = () => {
-    const nrAirplanes = random(MIN_AIRPLANES, MAX_AIRPLANES);
-    return [...Array(nrAirplanes)].map((_, i) => {
-      const rotationNumber = random(1, 3);
-      const rotate =
-        rotationNumber === 1 ? '0deg' : rotationNumber === 2 ? '90deg' : '-90deg';
-      return {
-        x: random(MIN_AIRPLANE_POSITION, MAX_AIRPLANE_POSITION),
-        y: random(MIN_AIRPLANE_POSITION, MAX_AIRPLANE_POSITION),
-        rotate,
-      };
-    });
   };
 
   const transformLine = [

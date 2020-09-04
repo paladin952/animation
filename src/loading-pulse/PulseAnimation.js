@@ -3,7 +3,7 @@ console.disableYellowBox = true;
 import React, {useState, useEffect} from 'react';
 import styled from 'styled-components/native';
 import {StyleSheet, Animated, Easing} from 'react-native';
-import {Container} from '../Containers';
+import {Page} from '../Containers';
 
 const CircleWrapper = styled.View`
   justify-content: center;
@@ -65,11 +65,11 @@ export const PulseAnimation = ({intervalTime = 1000}) => {
   }, [intervalTime]);
 
   return (
-    <Container>
+    <Page>
       {circles.map((circle, index) => (
         <Pulse key={index} interval={intervalTime} />
       ))}
       <LoadingText>Loading...</LoadingText>
-    </Container>
+    </Page>
   );
 };

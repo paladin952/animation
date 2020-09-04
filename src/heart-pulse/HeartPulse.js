@@ -1,7 +1,7 @@
 import React, {useRef} from 'react';
 import styled from 'styled-components/native';
 import {Animated, TouchableOpacity} from 'react-native';
-import {Container} from '../Containers';
+import {Page} from '../Containers';
 
 const AnimatedHearth = styled(Animated.View)`
   width: 100;
@@ -36,12 +36,12 @@ export const HeartPulseAnimation = () => {
   };
 
   return (
-    <Container>
+    <Page>
       <TouchableOpacity onPress={animate}>
         <AnimatedHearth style={{transform: [{scale: animatedValue}]}}>
           <HeartIcon source={require('../assets/heart_full.png')} />
         </AnimatedHearth>
       </TouchableOpacity>
-    </Container>
+    </Page>
   );
 };

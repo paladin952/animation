@@ -2,7 +2,7 @@
 import React, {useRef, useEffect} from 'react';
 import {Animated, Easing} from 'react-native';
 import styled from 'styled-components/native';
-import {Container} from '../Containers';
+import {Page} from '../Containers';
 
 const DIAMETER = 150;
 
@@ -80,7 +80,7 @@ export const LoadingAirplane = () => {
   ];
 
   return (
-    <Container>
+    <Page>
       <Circle>
         <SquareAnimated style={[{transform: transform1}]}>
           <LineAnimated style={[{transform: transform2}]}>
@@ -92,6 +92,6 @@ export const LoadingAirplane = () => {
       </Circle>
 
       <LoadingText>Loading...</LoadingText>
-    </Container>
+    </Page>
   );
 };

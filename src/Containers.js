@@ -3,7 +3,7 @@ import styled from 'styled-components/native';
 import {SafeAreaView} from 'react-native';
 
 const UsernameText = styled.Text`
-  font-size: 16;
+  font-size: 20;
   color: gray;
 `;
 

@@ -1,9 +1,8 @@
 /* eslint-disable react-hooks/exhaustive-deps */
-import React, {useRef, useState, useEffect} from 'react';
+import React, {useRef, useEffect} from 'react';
 import styled from 'styled-components/native';
-import {Animated, Easing, SafeAreaView} from 'react-native';
-import {Page, FollowSection} from '../Containers';
-import {crossPlatformElevation} from '../utils/StyleUtils';
+import {SafeAreaView} from 'react-native';
+import {FollowSection} from '../Containers';
 import ConfettiCannon from 'react-native-confetti-cannon';
 
 const Container = styled.View`

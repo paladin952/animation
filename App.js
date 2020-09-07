@@ -4,6 +4,7 @@ import {PulseAnimation} from './src/loading-pulse/PulseAnimation';
 import {HeartPulseAnimation} from './src/heart-pulse/HeartPulse';
 import {LoadingAirplane} from './src/loading-airplane/LoadingAirplane';
 import {RadarAnimation} from './src/radar/RadarAnimation';
+import {ConfettiAnimation} from './src/confetti/ConfettiAnimation';
 import {NavigationContainer, useNavigation} from '@react-navigation/native';
 import {createStackNavigator} from '@react-navigation/stack';
 import styled from 'styled-components/native';
@@ -46,6 +47,7 @@ const Menu = () => {
       {renderRow('Heart Pulse', () => navigation.navigate('Heart Pulse'))}
       {renderRow('Loading Airplane', () => navigation.navigate('Loading Airplane'))}
       {renderRow('Radar Animation', () => navigation.navigate('Radar Animation'))}
+      {renderRow('Confetti Animation', () => navigation.navigate('Confetti Animation'))}
     </ScrollView>
   );
 };
@@ -60,6 +62,7 @@ const App = () => {
         <Stack.Screen name="Loading Pulse" component={PulseAnimation} />
         <Stack.Screen name="Loading Airplane" component={LoadingAirplane} />
         <Stack.Screen name="Radar Animation" component={RadarAnimation} />
+        <Stack.Screen name="Confetti Animation" component={ConfettiAnimation} />
       </Stack.Navigator>
     </NavigationContainer>
   );

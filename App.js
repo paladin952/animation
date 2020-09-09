@@ -5,7 +5,9 @@ import {HeartPulseAnimation} from './src/heart-pulse/HeartPulse';
 import {LoadingAirplane} from './src/loading-airplane/LoadingAirplane';
 import {RadarAnimation} from './src/radar/RadarAnimation';
 import {ConfettiAnimation} from './src/confetti/ConfettiAnimation';
+import {HeartRate} from './src/heart-rate/HeartRate';
 import {JumpingPin} from './src/jumping-pin/JumpingPin';
+import {CircularProgress} from './src/circular-progress/CircularProgress';
 import {NavigationContainer, useNavigation} from '@react-navigation/native';
 import {createStackNavigator} from '@react-navigation/stack';
 import styled from 'styled-components/native';
@@ -50,6 +52,8 @@ const Menu = () => {
       {renderRow('Radar Animation', () => navigation.navigate('Radar Animation'))}
       {renderRow('Confetti Animation', () => navigation.navigate('Confetti Animation'))}
       {renderRow('Jumping Pin', () => navigation.navigate('Jumping Pin'))}
+      {renderRow('Heart Rate', () => navigation.navigate('Heart Rate'))}
+      {renderRow('Circular Progress', () => navigation.navigate('Circular Progress'))}
     </ScrollView>
   );
 };
@@ -66,6 +70,8 @@ const App = () => {
         <Stack.Screen name="Radar Animation" component={RadarAnimation} />
         <Stack.Screen name="Confetti Animation" component={ConfettiAnimation} />
         <Stack.Screen name="Jumping Pin" component={JumpingPin} />
+        <Stack.Screen name="Heart Rate" component={HeartRate} />
+        <Stack.Screen name="Circular Progress" component={CircularProgress} />
       </Stack.Navigator>
     </NavigationContainer>
   );

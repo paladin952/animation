@@ -15,10 +15,10 @@ const UsernameContainer = styled.View`
   justify-content: flex-end;
 `;
 
-export const JumpingPin = () => {
+export const HeartRate = () => {
   return (
     <Container>
-      <LottieView source={require('./animation.json')} autoPlay loop />
+      <LottieView source={require('./heart-rate-animation.json')} autoPlay loop />
 
       <UsernameContainer>
         <FollowSection />

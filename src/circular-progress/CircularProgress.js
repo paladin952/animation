@@ -66,7 +66,7 @@ export const CircularProgress = ({
   useEffect(() => {
     setTimeout(() => {
       firstAnimation();
-    }, 10000);
+    }, 3000);
   }, [done]);
 
   const renderInner = () => {

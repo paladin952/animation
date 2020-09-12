@@ -7,7 +7,7 @@ import styled from 'styled-components/native';
 import {Page} from '../Containers';
 
 const LoadingText = styled.Text`
-  color: white;
+  color: ${(props) => (props.isFull ? 'white' : 'black')};
   position: absolute;
   width: 100%;
   text-align: center;
@@ -25,7 +25,7 @@ export const CircularProgress = ({
   children,
 }) => {
   const [done] = useState(100);
-  const isFull = type === 'full';
+  const isFull = type === 'semi';
   const initialValueHalfCircle = done >= 50 ? 0 : 180;
   const initialValueInnerCircle = 0;
   const animatedValue1 = new Animated.Value(initialValueHalfCircle);
@@ -140,7 +140,7 @@ export const CircularProgress = ({
           zIndex: elevation3,
         })}
         {!isFull && renderInner()}
-        <LoadingText>Loading...</LoadingText>
+        <LoadingText isFull={isFull}>Loading...</LoadingText>
       </View>
     </Page>
   );
